@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import App from "./App";
 
 describe("TEST APP", () => {
@@ -20,5 +20,15 @@ describe("TEST APP", () => {
     const dataElem = await screen.findByText(/data/i);
     expect(dataElem).toBeInTheDocument();
     expect(dataElem).toHaveStyle({ color: "red" });
+  });
+
+  test("Click Event", () => {
+    render(<App />);
+    const btn = screen.getByTestId("toggle-btn");
+    expect(screen.queryByTestId("toggle-elem")).toBeNull();
+    fireEvent.click(btn);
+    expect(screen.getByTestId("toggle-elem")).toBeInTheDocument();
+    fireEvent.click(btn);
+    expect(screen.queryByTestId("toggle-elem")).toBeNull();
   });
 });
