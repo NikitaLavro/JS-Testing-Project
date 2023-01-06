@@ -18,5 +18,8 @@
   "homepage": "https://github.com/NikitaLavro/JS-Testing-Project#readme",
   "devDependencies": {
     "jest": "^29.3.1"
+  },
+  "dependencies": {
+    "axios": "^1.2.2"
   }
 }
