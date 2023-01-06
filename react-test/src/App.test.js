@@ -31,4 +31,12 @@ describe("TEST APP", () => {
     fireEvent.click(btn);
     expect(screen.queryByTestId("toggle-elem")).toBeNull();
   });
+
+  test("Input Event", () => {
+    render(<App />);
+    const input = screen.getByPlaceholderText(/input value/i);
+    expect(screen.queryByTestId("value-elem")).toContainHTML("");
+    fireEvent.input(input, { target: { value: "123213" } });
+    expect(screen.getByTestId("value-elem")).toContainHTML("123213");
+  });
 });
