@@ -1,5 +1,5 @@
-import axios from "axios";
 import React, { useState, useEffect } from "react";
+import { default as axios } from "axios";
 
 const Users = () => {
   const [users, setUsers] = useState([]);
@@ -18,7 +18,7 @@ const Users = () => {
   return (
     <div>
       {users.map((user) => (
-        <div key={user.id} data-testId="user-item">
+        <div key={user.id} data-testd="user-item">
           {user.name}
         </div>
       ))}

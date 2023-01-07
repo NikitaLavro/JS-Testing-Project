@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 
+import Users from "./users/Users";
+
 function App() {
   const [data, setData] = useState(null);
   const [toggle, setToggle] = useState(false);
@@ -27,6 +29,7 @@ function App() {
         type="text"
         placeholder="input value..."
       />
+      <Users />
     </div>
   );
 }
